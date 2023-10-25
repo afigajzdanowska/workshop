@@ -13,6 +13,14 @@ class AdminAuth(BaseSettings):
     username: str
     password: str
 
+class EnvSettings(BaseSettings):
+    model_config = SettingsConfigDict(env_file="../.env", env_file_encoding="utf-8")
+    base_url: str
+
 @pytest.fixture
 def admin_auth() -> AdminAuth:
     return AdminAuth()
+
+@pytest.fixture
+def env_settings() -> EnvSettings:
+    return EnvSettings()
