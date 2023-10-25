@@ -9,7 +9,7 @@ def pytest_configure():
         logger = logging.getLogger(logger_name)
         logger.disabled = True
 class AdminAuth(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
+    model_config = SettingsConfigDict(env_file="../.env", env_file_encoding="utf-8")
     username: str
     password: str
 
